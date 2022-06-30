@@ -11,6 +11,10 @@ const Movie = sequelize.define("Movie", {
     type: DataTypes.STRING,
     defaultValue: "Not specified",
   },
+  rating: {
+    type: DataTypes.INTEGER,
+    defaultValue: "Not specified",
+  },
 });
 
 module.exports = Movie;
