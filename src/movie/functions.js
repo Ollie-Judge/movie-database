@@ -24,7 +24,9 @@ exports.listMovie = async () => {
 exports.updateMovie = async (updateObj, filterObj) => {
   try {
     //find and update a movie
-    const response = await Movie.update(updateObj, { where: filterObj });
+    const response = await Movie.update(updateObj, {
+      where: filterObj,
+    });
     if (response[0] > 0) {
       console.log("The movie has been successfully updated");
     } else {
