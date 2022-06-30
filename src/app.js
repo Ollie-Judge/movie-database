@@ -16,6 +16,7 @@ const app = async (yargsObj) => {
         title: yargsObj.title,
         actor: yargsObj.actor,
       });
+      console.log(`The movie ${yargsObj.title} has been added to the database`);
     } else if (yargsObj.list) {
       //list contents of movie table
       await listMovie();

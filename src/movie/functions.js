@@ -3,10 +3,7 @@ const Movie = require("./table");
 exports.addMovie = async (movieObj) => {
   try {
     //add a movies
-    const newMovie = await Movie.create(movieObj);
-    console.log(
-      `The movie ${newMovie.dataValues.title} has been added to the database`
-    );
+    await Movie.create(movieObj);
   } catch (error) {
     console.log(error);
   }
