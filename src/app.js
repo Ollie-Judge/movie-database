@@ -5,7 +5,7 @@ const {
   listMovie,
   updateMovie,
   deleteMovie,
-} = require("./tvShows/functions");
+} = require("./movie/functions");
 
 const app = async (yargsObj) => {
   try {
@@ -15,18 +15,13 @@ const app = async (yargsObj) => {
       await addMovie({
         title: yargsObj.title,
         actor: yargsObj.actor,
-        rating: yargsObj.rating,
       });
     } else if (yargsObj.list) {
       //list contents of movie table
       await listMovie();
     } else if (yargsObj.update) {
       //update one entry in movie table
-      await updateMovie(
-        { actor: yargsObj.actor },
-        { title: yargsObj.title },
-        { rating: yargsObj.rating }
-      );
+      await updateMovie({ actor: yargsObj.actor }, { title: yargsObj.title });
     } else if (yargsObj.delete) {
       //delete entry from movie table
       await deleteMovie({ title: yargsObj.title });

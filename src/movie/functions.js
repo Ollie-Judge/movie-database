@@ -17,11 +17,7 @@ exports.listMovie = async () => {
     //list all movies
     const movies = await Movie.findAll();
     for (let i = 0; i < movies.length; i++) {
-      console.log(
-        movies[i].dataValues.title,
-        movies[i].dataValues.actor,
-        movies[i].dataValues.rating
-      );
+      console.log(movies[i].dataValues.title, movies[i].dataValues.actor);
     }
   } catch (error) {
     console.log(error);
